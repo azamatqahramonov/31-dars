@@ -4,39 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Tailwind CSS</title>
+
+    <style>
+      .bg-dark-blue {
+        background-color: #2a86ee;
+      }
+    </style>
   </head>
-  <body style="background: #f8f9ff">
-    <header>
-      <nav>
-        <div
-          class="container flex items-center py-[20px] justify-center md:justify-between"
-        >
-          <div><img src="./images/Logo (6).svg" alt="" /></div>
-
-          <ul class="flex justify-center gap-12 font-bold items-center">
-            <li class="hidden lg:block">
-              <a href=""> <span class="text-[#009379]">Contact</span></a>
-            </li>
-
-            <li class="hidden md:block">
-              <button
-                class="text-[#009379] bg-[#e5faf2] py-[18px] px-[50px] rounded-[20px]"
-              >
-                How it works
-              </button>
-            </li>
-
-            <li class="hidden lg:block">
-              <button
-                class="text-[#fff] bg-[#009379] py-[18px] px-[50px] rounded-[20px] flex gap-2"
-              >
-                <img class="pt-[5px]" src="./images/nav-logo2.svg" alt="" />
-
-                <span>How it works</span>
-              </button>
-            </li>
-          </ul>
+  <body class="bg-inherit transition-colors duration-300" id="body">
+    <header class="flex justify-center items-center gap-8 py-4">
+      <nav class="container flex items-center justify-center gap-8 md:justify-between">
+        <div class="flex items-center gap-4">
+          <img src="./images/Logo (6).svg" alt="Logo" />
         </div>
+
+        <ul class="flex justify-center gap-6 font-bold items-center">
+          <li class="hidden lg:block">
+            <a href=""> <span class="text-[#009379]">Contact</span></a>
+          </li>
+
+          <li class="hidden md:block">
+            <button
+              class="text-[#009379] bg-[#e5faf2] py-[10px] px-[30px] rounded-[20px]"
+            >
+              How it works
+            </button>
+          </li>
+
+          <li class="hidden lg:block">
+            <button
+              class="text-[#fff] bg-[#009379] py-[10px] px-[30px] rounded-[20px] flex gap-2"
+            >
+              
+              <span>How it works</span>
+            </button>
+          </li>
+
+          <li>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="toggle" class="sr-only peer">
+              <div
+                class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+              ></div>
+            </label>
+          </li>
+        </ul>
       </nav>
     </header>
 
@@ -66,7 +78,7 @@
                 <button
                   class="text-[#fff] bg-[#009379] py-[18px] px-[50px] rounded-[20px] flex gap-2"
                 >
-                  <img class="pt-[5px]" src="./images/nav-logo2.svg" alt="" />
+                 
 
                   <span>Get Started</span>
                 </button>
@@ -75,7 +87,7 @@
           </div>
 
           <div>
-            <img src="./images/Visuals.svg" alt="" />
+            <img src="./images/Visuals.svg" alt="Visual" />
           </div>
         </div>
       </section>
@@ -176,6 +188,24 @@
       </div>
     </section>
 
+
+
+
     <script type="module" src="./main.js"></script>
+
+    <script>
+      const toggle = document.getElementById('toggle');
+      const body = document.getElementById('body');
+
+      toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+          body.classList.remove('bg-inherit');
+          body.classList.add('bg-dark-blue'); // Adds dark blue background
+        } else {
+          body.classList.remove('bg-dark-blue');
+          body.classList.add('bg-inherit');
+        }
+      });
+    </script>
   </body>
 </html>
