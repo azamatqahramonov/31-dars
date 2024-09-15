@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.border {
+.borders {
   border-bottom: 4px solid #f2bfaf;
   box-shadow: 34.85px 29.63px 48.34px 0px #3366ff0d;
   padding: 30px 16px 30px 16px;
